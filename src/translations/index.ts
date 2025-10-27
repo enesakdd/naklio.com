@@ -101,7 +101,7 @@ export const translations = {
       title: 'Sıkça Sorulan Sorular',
       subtitle: 'Naklio hakkında merak ettikleriniz',
       q1: 'Naklio nedir?',
-      a1: 'Naklio, araç taşımacılığı süreçlerini dijitalleştiren, gerçek zamanlı takip ve rota optimizasyonu sunan akıllı bir lojistik platformudur.',
+      a1: 'Naklio, araç taşımaa süreçlerini dijitalleştiren, gerçek zamanlı takip ve rota optimizasyonu sunan akıllı bir lojistik platformudur.',
       q2: 'Nasıl kayıt olabilirim?',
       a2: 'Web sitemizin sağ üst köşesindeki "Başvur" butonuna tıklayarak bizimle iletişime geçebilirsiniz',
       q3: 'Ücretlendirme nasıl yapılıyor?',

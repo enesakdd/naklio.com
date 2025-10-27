@@ -37,16 +37,10 @@ export function Footer({ onNavigate, language }: FooterProps) {
 
           {/* Quick Links */}
           <div>
-            <h4 className="mb-4">{t.footer.quickLinks}</h4>
             <ul className="space-y-2">
               <li>
                 <button onClick={() => onNavigate('home')} className="text-gray-300 hover:text-[var(--naklio-orange)] transition-colors">
                   {t.nav.home}
-                </button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate('about')} className="text-gray-300 hover:text-[var(--naklio-orange)] transition-colors">
-                  {t.nav.about}
                 </button>
               </li>
               <li>
@@ -67,33 +61,6 @@ export function Footer({ onNavigate, language }: FooterProps) {
             </ul>
           </div>
 
-          {/* Legal */}
-          <div>
-            <h4 className="mb-4">{t.footer.legal}</h4>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-gray-300 hover:text-[var(--naklio-orange)] transition-colors">
-                  {t.footer.privacy}
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-[var(--naklio-orange)] transition-colors">
-                  {t.footer.kvkk}
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-[var(--naklio-orange)] transition-colors">
-                  {t.footer.terms}
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-[var(--naklio-orange)] transition-colors">
-                  {t.footer.cookies}
-                </a>
-              </li>
-            </ul>
-          </div>
-
           {/* Contact */}
           <div>
             <h4 className="mb-4">{t.footer.contactTitle}</h4>
@@ -103,12 +70,8 @@ export function Footer({ onNavigate, language }: FooterProps) {
                 <span className="text-gray-300">info@naklio.com</span>
               </li>
               <li className="flex items-start gap-2">
-                <Phone className="w-5 h-5 mt-0.5 flex-shrink-0 text-[var(--naklio-orange)]" />
-                <span className="text-gray-300">+90 (536) 593 4748</span>
-              </li>
-              <li className="flex items-start gap-2">
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0 text-[var(--naklio-orange)]" />
-                <span className="text-gray-300">{t.contact.address}</span>
+                <span className="text-gray-300">Maltepe Piazza, Cevizli, Tugay Yolu Cd. İstanbul/Türkiye</span>
               </li>
             </ul>
           </div>
