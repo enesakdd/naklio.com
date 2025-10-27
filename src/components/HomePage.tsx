@@ -250,11 +250,16 @@ export function HomePage({ onNavigate, language }: HomePageProps) {
             
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
-                <ImageWithFallback 
-                  src="https://images.unsplash.com/photo-1758411897888-3ca658535fdf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXNoYm9hcmQlMjB0ZWNobm9sb2d5JTIwc2NyZWVufGVufDF8fHx8MTc2MDY5Mzg5MXww&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="Naklio Dashboard"
-                  className="w-full h-auto"
-                />
+                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full"
+                    src="https://www.youtube.com/embed/bDuT5ovYBhU?autoplay=1&mute=1&loop=1&playlist=bDuT5ovYBhU&controls=1&modestbranding=1&rel=0"
+                    title="Naklio Platform"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
               </div>
             </div>
           </div>
