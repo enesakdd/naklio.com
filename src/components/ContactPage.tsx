@@ -21,6 +21,8 @@ export function ContactPage({ onNavigate, language }: ContactPageProps) {
     subject: 'general',
     message: ''
   });
+
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   
   const contactInfo = [
     {
@@ -47,23 +49,47 @@ export function ContactPage({ onNavigate, language }: ContactPageProps) {
     { value: 'partnership', label: 'Partnership' }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitStatus('loading');
     
     const subjectLabel = departments.find(d => d.value === formData.subject)?.label || formData.subject;
     
-    const emailBody = `
-İsim: ${formData.name}
-E-posta: ${formData.email}
-Telefon: ${formData.phone}
-Konu: ${subjectLabel}
+    try {
+      const response = await fetch('https://formspree.io/f/mdkpagor', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: subjectLabel,
+          message: formData.message
+        })
+      });
 
-Mesaj:
-${formData.message}
-    `.trim();
-    
-    const mailtoLink = `mailto:info@naklio.com?subject=${encodeURIComponent(subjectLabel)}&body=${encodeURIComponent(emailBody)}`;
-    window.location.href = mailtoLink;
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: 'general',
+          message: ''
+        });
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      } else {
+        setSubmitStatus('error');
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+    }
   };
 
   const faqs = language === 'tr' ? [
@@ -215,14 +241,39 @@ ${formData.message}
                   type="submit"
                   className="w-full rounded-lg"
                   size="lg"
+                  disabled={submitStatus === 'loading'}
                   style={{ 
                     backgroundColor: 'var(--naklio-orange)',
-                    color: 'white'
+                    color: 'white',
+                    opacity: submitStatus === 'loading' ? 0.7 : 1
                   }}
                 >
                   <Send className="mr-2 w-5 h-5" />
-                  {t.send}
+                  {submitStatus === 'loading' 
+                    ? (language === 'tr' ? 'Gönderiliyor...' : 'Sending...') 
+                    : t.send
+                  }
                 </Button>
+
+                {/* Success Message */}
+                {submitStatus === 'success' && (
+                  <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
+                    {language === 'tr' 
+                      ? '✓ Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.' 
+                      : '✓ Your message has been sent successfully! We will get back to you soon.'
+                    }
+                  </div>
+                )}
+
+                {/* Error Message */}
+                {submitStatus === 'error' && (
+                  <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-800">
+                    {language === 'tr' 
+                      ? '✗ Mesaj gönderilemedi. Lütfen tekrar deneyin veya info@naklio.com adresine e-posta gönderin.' 
+                      : '✗ Failed to send message. Please try again or email us at info@naklio.com.'
+                    }
+                  </div>
+                )}
               </form>
             </div>
 

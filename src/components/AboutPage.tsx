@@ -193,6 +193,9 @@ export function AboutPage({ language }: AboutPageProps) {
             <h2 className="text-3xl md:text-4xl mb-4" style={{ color: 'var(--naklio-teal)' }}>
               {language === 'tr' ? 'Ekip Değerlerimiz' : 'Our Team Values'}
             </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              {language === 'tr' ? 'Başarımızın arkasındaki prensipler' : 'The principles behind our success'}
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
