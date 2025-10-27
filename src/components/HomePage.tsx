@@ -11,7 +11,7 @@ import {
   Car,
   Radar,
   MapPin,
-  LayoutDashboard,
+  FileBarChart,
   Headphones
 } from 'lucide-react';
 import { Button } from './ui/button';
@@ -63,7 +63,7 @@ export function HomePage({ onNavigate, language }: HomePageProps) {
       description: t.valueProps.optimizationDesc
     },
     {
-      icon: LayoutDashboard,
+      icon: FileBarChart,
       title: t.valueProps.reportingTitle,
       description: t.valueProps.reportingDesc
     },
@@ -222,15 +222,6 @@ export function HomePage({ onNavigate, language }: HomePageProps) {
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 mt-0.5 flex-shrink-0" style={{ color: 'var(--naklio-orange)' }} />
                   <p className="text-gray-700">
-                    {language === 'tr'
-                      ? "7 Kurumsal Filo Sahibi ve lojistik tedarikçiler"
-                      : "7 Corporate Fleet Owners and logistics suppliers"
-                    }
-                  </p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 mt-0.5 flex-shrink-0" style={{ color: 'var(--naklio-orange)' }} />
-                  <p className="text-gray-700">
                     {t.valueProps.supportTitle} - {t.valueProps.supportDesc}
                   </p>
                 </div>
@@ -242,7 +233,7 @@ export function HomePage({ onNavigate, language }: HomePageProps) {
                   backgroundColor: 'var(--naklio-teal)',
                   color: 'white'
                 }}
-                onClick={() => onNavigate('about')}
+                onClick={() => onNavigate('solutions')}
               >
                 {t.solutions.learnMore}
               </Button>
@@ -251,13 +242,10 @@ export function HomePage({ onNavigate, language }: HomePageProps) {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                  <iframe
-                    className="absolute top-0 left-0 w-full h-full"
-                    src="https://www.youtube.com/embed/bDuT5ovYBhU?autoplay=1&mute=1&loop=1&playlist=bDuT5ovYBhU&controls=1&modestbranding=1&rel=0"
-                    title="Naklio Platform"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
+                  <img
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    src="https://media.naklio.com/naklio%20banner.gif"
+                    alt="Naklio Platform"
                   />
                 </div>
               </div>

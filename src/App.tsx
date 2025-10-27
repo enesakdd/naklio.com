@@ -7,6 +7,7 @@ import { ContactPage } from './components/ContactPage';
 import { SSSPage } from './components/SSSPage';
 import { SEOHead } from './components/SEOHead';
 import { StructuredData } from './components/StructuredData';
+import { GoogleAnalytics } from './components/GoogleAnalytics';
 import { Language } from './translations';
 
 export default function App() {
@@ -35,6 +36,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <GoogleAnalytics />
       <SEOHead page={currentPage} language={language} />
       <StructuredData page={currentPage} language={language} />
       <Navigation 

@@ -286,14 +286,14 @@ export function ContactPage({ onNavigate, language }: ContactPageProps) {
               {/* Map */}
               <div className="rounded-2xl overflow-hidden shadow-lg mb-8 h-64">
                 <iframe
-                  src="https://maps.google.com/maps?q=Officelink+Piazza,+Maltepe+Piazza,+Cevizli,+Tugay+Yolu+Cd.+No:69/A,+34846+Maltepe/İstanbul&t=&z=16&ie=UTF8&iwloc=B&output=embed&markers=40.9205,29.1447"
+                  src="https://www.google.com/maps?q=Maltepe+Piazza,+Cevizli,+Tugay+Yolu+Cd.+İstanbul,+Türkiye&output=embed&z=16"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title={language === 'tr' ? 'Naklio Ofis Konumu - Officelink Piazza' : 'Naklio Office Location - Officelink Piazza'}
+                  title={language === 'tr' ? 'Naklio Ofis Konumu - Maltepe Piazza' : 'Naklio Office Location - Maltepe Piazza'}
                 />
               </div>
 
