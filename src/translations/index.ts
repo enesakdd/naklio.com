@@ -2,12 +2,11 @@ export const translations = {
   tr: {
     nav: {
       home: 'Ana Sayfa',
-      about: 'Hakkımızda',
       solutions: 'Çözümler',
       faq: 'SSS',
       contact: 'İletişim',
       login: 'Giriş Yap',
-      getQuote: 'Teklif Al'
+      getQuote: 'Başvur'
     },
     hero: {
       title: 'Akıllı Lojistik Çözümleriyle Araç Taşımacılığında Verimlilik',
@@ -104,7 +103,7 @@ export const translations = {
       q1: 'Naklio nedir?',
       a1: 'Naklio, araç taşımacılığı süreçlerini dijitalleştiren, gerçek zamanlı takip ve rota optimizasyonu sunan akıllı bir lojistik platformudur.',
       q2: 'Nasıl kayıt olabilirim?',
-      a2: 'Web sitemizin sağ üst köşesindeki "Teklif Al" butonuna tıklayarak bizimle iletişime geçebilirsiniz',
+      a2: 'Web sitemizin sağ üst köşesindeki "Başvur" butonuna tıklayarak bizimle iletişime geçebilirsiniz',
       q3: 'Ücretlendirme nasıl yapılıyor?',
       a3: 'Ücretlendirme taşınan araç modeli, araç adedi, mesafe ve beklenen teslimat süresine bağlı olarak değişmektedir.',
       q4: 'Hangi ödeme yöntemlerini kabul ediyorsunuz?',
@@ -138,12 +137,11 @@ export const translations = {
   en: {
     nav: {
       home: 'Home',
-      about: 'About Us',
       solutions: 'Solutions',
       faq: 'FAQ',
       contact: 'Contact',
       login: 'Login',
-      getQuote: 'Get Quote'
+      getQuote: 'Apply'
     },
     hero: {
       title: 'Efficiency in Vehicle Transportation with Smart Logistics Solutions',
@@ -240,7 +238,7 @@ export const translations = {
       q1: 'What is Naklio?',
       a1: 'Naklio is a smart logistics platform that digitizes vehicle transportation processes, offering real-time tracking and route optimization.',
       q2: 'How can I register?',
-      a2: 'You can contact us by clicking the "Get Quote" button in the upper right corner of our website',
+      a2: 'You can contact us by clicking the "Apply" button in the upper right corner of our website',
       q3: 'How does pricing work?',
       a3: 'Pricing varies depending on the vehicle model being transported, number of vehicles, distance and expected delivery time.',
       q4: 'What payment methods do you accept?',

@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { HomePage } from './components/HomePage';
-import { AboutPage } from './components/AboutPage';
 import { SolutionsPage } from './components/SolutionsPage';
 import { ContactPage } from './components/ContactPage';
 import { SSSPage } from './components/SSSPage';
@@ -21,8 +20,6 @@ export default function App() {
     switch (currentPage) {
       case 'home':
         return <HomePage onNavigate={setCurrentPage} language={language} />;
-      case 'about':
-        return <AboutPage language={language} />;
       case 'solutions':
         return <SolutionsPage language={language} />;
       case 'contact':

@@ -18,7 +18,6 @@ export function Navigation({ currentPage, onNavigate, language, onLanguageChange
 
   const navLinks = [
     { name: t.home, id: 'home' },
-    { name: t.about, id: 'about' },
     { name: t.solutions, id: 'solutions' },
     { name: t.faq, id: 'sss' },
     { name: t.contact, id: 'contact' },
