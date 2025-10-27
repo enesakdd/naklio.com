@@ -1,6 +1,7 @@
 import { Facebook, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Language, translations } from '../translations';
+import logoImage from 'figma:asset/88e99ec0b0cfb72138a40b360b8bd12b7279b1b1.png';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -16,7 +17,7 @@ export function Footer({ onNavigate, language }: FooterProps) {
           {/* Company Info */}
           <div>
             <div className="mb-4">
-              <ImageWithFallback src="https://naklio.com/wp-content/uploads/2025/10/naklio-5.png" alt="Naklio" className="h-8" />
+              <ImageWithFallback src={logoImage} alt="Naklio" className="h-8" />
             </div>
             <p className="text-gray-300 mb-4">
               {t.footer.description}

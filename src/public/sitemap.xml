@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://naklio.com/</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://naklio.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://naklio.com/" />
+  </url>
+  
+  <!-- Solutions Page -->
+  <url>
+    <loc>https://naklio.com/solutions</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://naklio.com/solutions" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://naklio.com/solutions" />
+  </url>
+  
+  <!-- Contact Page -->
+  <url>
+    <loc>https://naklio.com/contact</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://naklio.com/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://naklio.com/contact" />
+  </url>
+  
+  <!-- FAQ Page -->
+  <url>
+    <loc>https://naklio.com/sss</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://naklio.com/sss" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://naklio.com/sss" />
+  </url>
+  
+</urlset>

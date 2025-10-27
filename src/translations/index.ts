@@ -10,13 +10,13 @@ export const translations = {
     },
     hero: {
       title: 'Akıllı Lojistik Çözümleriyle Araç Taşımacılığında Verimlilik',
-      subtitle: 'Naklio ile araç taşımacılığınızı dijitalleştirin, maliyetlerinizi azaltın ve operasyonel verimliliğinizi artırın.',
+      subtitle: 'Naklio ile araç taşıma süreçlerinizi dijitalleştirin, maliyetlerinizi azaltın ve operasyonel verimliliğinizi artırın.',
       cta: 'Ücretsiz Deneyin',
       watchDemo: 'Demo İzle'
     },
     howItWorks: {
       title: 'Nasıl Çalışır?',
-      subtitle: 'Naklio ile araç taşımacılığınızı sadece 4 adımda dijitalleştirin!',
+      subtitle: 'Naklio ile araç taşıma süreçlerinizi sadece 4 adımda dijitalleştirin!',
       step1Title: '1. Kayıt Ol',
       step1Desc: 'Hızlı ve kolay kayıt süreciyle platformumuza katılın',
       step2Title: '2. Araçları Yükle',

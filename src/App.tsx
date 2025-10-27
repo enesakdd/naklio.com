@@ -5,6 +5,8 @@ import { HomePage } from './components/HomePage';
 import { SolutionsPage } from './components/SolutionsPage';
 import { ContactPage } from './components/ContactPage';
 import { SSSPage } from './components/SSSPage';
+import { SEOHead } from './components/SEOHead';
+import { StructuredData } from './components/StructuredData';
 import { Language } from './translations';
 
 export default function App() {
@@ -33,6 +35,8 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEOHead page={currentPage} language={language} />
+      <StructuredData page={currentPage} language={language} />
       <Navigation 
         currentPage={currentPage} 
         onNavigate={setCurrentPage} 
