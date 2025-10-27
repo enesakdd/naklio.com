@@ -31,12 +31,54 @@
 
 ## 📋 Additional Steps You Should Take
 
-### 1. **Google Search Console**
-1. Go to [Google Search Console](https://search.google.com/search-console)
-2. Add your property: `https://naklio.com`
-3. Verify ownership (HTML file upload or DNS verification)
-4. Submit your sitemap: `https://naklio.com/sitemap.xml`
-5. Monitor indexing status and fix any errors
+### 1. **Google Search Console & Sitemap Setup**
+
+**Important: Fixing "Sitemap is HTML" Error**
+
+If Google Search Console shows your sitemap as HTML instead of XML, follow these steps:
+
+1. **Deploy Configuration Files**: 
+   - We've created platform-specific config files (`vercel.json`, `netlify.toml`, `_redirects`, `public/_headers`)
+   - Make sure these files are deployed with your site
+   - These ensure `/sitemap.xml` is served as XML, not wrapped in your React app
+
+2. **Verify Sitemap Directly**:
+   - Open `https://naklio.com/sitemap.xml` in your browser
+   - You should see XML code, NOT your website's HTML
+   - Right-click → View Page Source to confirm
+   - If you see your React app instead of XML, the config files aren't working yet
+
+3. **Platform-Specific Instructions**:
+   
+   **Vercel:**
+   - Ensure `vercel.json` is in your root directory
+   - Redeploy your site
+   - The config will automatically serve static files correctly
+   
+   **Netlify/Cloudflare Pages:**
+   - Ensure `netlify.toml` and `_redirects` are in your root directory
+   - Ensure `_headers` is in `/public` directory
+   - Redeploy your site
+   
+   **Other Platforms:**
+   - Configure your hosting to serve `/public/sitemap.xml` as a static file
+   - Set Content-Type header to `application/xml`
+
+4. **Submit to Google Search Console**:
+   - Go to [Google Search Console](https://search.google.com/search-console)
+   - Add your property: `https://naklio.com`
+   - Verify ownership (HTML file upload or DNS verification)
+   - Go to "Sitemaps" in the left menu
+   - Enter: `sitemap.xml` (or full URL: `https://naklio.com/sitemap.xml`)
+   - Click "Submit"
+   - Wait 24-48 hours for Google to process
+   - Check for any errors in the console
+
+5. **Troubleshooting**:
+   - If still showing as HTML, check your server's response headers
+   - Use curl to test: `curl -I https://naklio.com/sitemap.xml`
+   - Should show: `Content-Type: application/xml`
+   - Contact your hosting support if issues persist
 
 ### 2. **Google Analytics**
 Add Google Analytics 4 to track:
