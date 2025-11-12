@@ -10,9 +10,66 @@ import { StructuredData } from './components/StructuredData';
 import { GoogleAnalytics } from './components/GoogleAnalytics';
 import { Language } from './translations';
 
+// URL path mappings for bilingual support
+const pathToPage: Record<string, string> = {
+  '': 'home',
+  'cozumler': 'solutions',
+  'solutions': 'solutions',
+  'iletisim': 'contact',
+  'contact': 'contact',
+  'sss': 'sss',
+  'faq': 'sss',
+};
+
+const pageToTurkishPath: Record<string, string> = {
+  'home': '',
+  'solutions': 'cozumler',
+  'contact': 'iletisim',
+  'sss': 'sss',
+};
+
+const pageToEnglishPath: Record<string, string> = {
+  'home': '',
+  'solutions': 'solutions',
+  'contact': 'contact',
+  'sss': 'faq',
+};
+
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [language, setLanguage] = useState<Language>('tr');
+
+  // Initialize from URL on mount
+  useEffect(() => {
+    const path = window.location.pathname.replace(/^\//, '').replace(/\/$/, '');
+    const page = pathToPage[path] || 'home';
+    setCurrentPage(page);
+  }, []);
+
+  // Update URL when page changes
+  useEffect(() => {
+    const path = language === 'tr' 
+      ? pageToTurkishPath[currentPage] 
+      : pageToEnglishPath[currentPage];
+    
+    const newPath = path ? `/${path}` : '/';
+    
+    if (window.location.pathname !== newPath) {
+      window.history.pushState({}, '', newPath);
+    }
+  }, [currentPage, language]);
+
+  // Handle browser back/forward buttons
+  useEffect(() => {
+    const handlePopState = () => {
+      const path = window.location.pathname.replace(/^\//, '').replace(/\/$/, '');
+      const page = pathToPage[path] || 'home';
+      setCurrentPage(page);
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   // Scroll to top whenever the page changes
   useEffect(() => {
