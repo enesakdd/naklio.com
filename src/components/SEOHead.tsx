@@ -15,10 +15,10 @@ const pageToTurkishPath: Record<string, string> = {
 };
 
 const pageToEnglishPath: Record<string, string> = {
-  'home': '',
-  'solutions': 'solutions',
-  'contact': 'contact',
-  'sss': 'faq',
+  'home': 'en',
+  'solutions': 'en/solutions',
+  'contact': 'en/contact',
+  'sss': 'en/faq',
 };
 
 const seoData = {
@@ -135,9 +135,9 @@ export function SEOHead({ page, language }: SEOHeadProps) {
     
     // Generate URLs for both languages
     const trPath = pageToTurkishPath[page] || '';
-    const enPath = pageToEnglishPath[page] || '';
+    const enPath = pageToEnglishPath[page] || 'en';
     const trUrl = trPath ? `https://naklio.com/${trPath}` : 'https://naklio.com/';
-    const enUrl = enPath ? `https://naklio.com/${enPath}` : 'https://naklio.com/';
+    const enUrl = `https://naklio.com/${enPath}`;
     const currentUrl = language === 'tr' ? trUrl : enUrl;
     
     // Canonical URL - points to current language version

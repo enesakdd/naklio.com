@@ -1,82 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <!-- Homepage -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepages -->
   <url>
     <loc>https://naklio.com/</loc>
-    <lastmod>2024-12-04</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://naklio.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://naklio.com/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://naklio.com/" />
   </url>
-  
-  <!-- Solutions Page Turkish -->
+  <url>
+    <loc>https://naklio.com/en/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Çözümler / Solutions -->
   <url>
     <loc>https://naklio.com/cozumler</loc>
-    <lastmod>2024-12-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://naklio.com/cozumler" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://naklio.com/solutions" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://naklio.com/cozumler" />
+    <priority>0.9</priority>
   </url>
-  
-  <!-- Solutions Page English -->
   <url>
-    <loc>https://naklio.com/solutions</loc>
-    <lastmod>2024-12-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://naklio.com/cozumler" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://naklio.com/solutions" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://naklio.com/cozumler" />
+    <loc>https://naklio.com/en/solutions</loc>
+    <priority>0.9</priority>
   </url>
-  
-  <!-- Contact Page Turkish -->
-  <url>
-    <loc>https://naklio.com/iletisim</loc>
-    <lastmod>2024-12-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://naklio.com/iletisim" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://naklio.com/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://naklio.com/iletisim" />
-  </url>
-  
-  <!-- Contact Page English -->
-  <url>
-    <loc>https://naklio.com/contact</loc>
-    <lastmod>2024-12-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://naklio.com/iletisim" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://naklio.com/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://naklio.com/iletisim" />
-  </url>
-  
-  <!-- FAQ Page Turkish -->
+
+  <!-- SSS / FAQ -->
   <url>
     <loc>https://naklio.com/sss</loc>
-    <lastmod>2024-12-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://naklio.com/sss" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://naklio.com/faq" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://naklio.com/sss" />
+    <priority>0.8</priority>
   </url>
-  
-  <!-- FAQ Page English -->
   <url>
-    <loc>https://naklio.com/faq</loc>
-    <lastmod>2024-12-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://naklio.com/sss" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://naklio.com/faq" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://naklio.com/sss" />
+    <loc>https://naklio.com/en/faq</loc>
+    <priority>0.8</priority>
   </url>
-  
+
+  <!-- İletişim / Contact -->
+  <url>
+    <loc>https://naklio.com/iletisim</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://naklio.com/en/contact</loc>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

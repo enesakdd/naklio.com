@@ -15,12 +15,13 @@ import { Language } from './translations';
 // URL path mappings for bilingual support
 const pathToPage: Record<string, string> = {
   '': 'home',
+  'en': 'home',
   'cozumler': 'solutions',
-  'solutions': 'solutions',
+  'en/solutions': 'solutions',
   'iletisim': 'contact',
-  'contact': 'contact',
+  'en/contact': 'contact',
   'sss': 'sss',
-  'faq': 'sss',
+  'en/faq': 'sss',
 };
 
 const pageToTurkishPath: Record<string, string> = {
@@ -31,10 +32,10 @@ const pageToTurkishPath: Record<string, string> = {
 };
 
 const pageToEnglishPath: Record<string, string> = {
-  'home': '',
-  'solutions': 'solutions',
-  'contact': 'contact',
-  'sss': 'faq',
+  'home': 'en',
+  'solutions': 'en/solutions',
+  'contact': 'en/contact',
+  'sss': 'en/faq',
 };
 
 export default function App() {
@@ -47,14 +48,21 @@ export default function App() {
     const path = window.location.pathname.replace(/^\//, '').replace(/\/$/, '');
     const page = pathToPage[path];
     
+    // Detect language from URL
+    const isEnglishPath = path.startsWith('en/') || path === 'en';
+    const detectedLanguage: Language = isEnglishPath ? 'en' : 'tr';
+    
     if (page) {
       setCurrentPage(page);
+      setLanguage(detectedLanguage);
       setIs404(false);
     } else if (path === '') {
       setCurrentPage('home');
+      setLanguage('tr');
       setIs404(false);
     } else {
       setIs404(true);
+      setLanguage(detectedLanguage);
     }
   }, []);
 
@@ -79,14 +87,21 @@ export default function App() {
       const path = window.location.pathname.replace(/^\//, '').replace(/\/$/, '');
       const page = pathToPage[path];
       
+      // Detect language from URL
+      const isEnglishPath = path.startsWith('en/') || path === 'en';
+      const detectedLanguage: Language = isEnglishPath ? 'en' : 'tr';
+      
       if (page) {
         setCurrentPage(page);
+        setLanguage(detectedLanguage);
         setIs404(false);
       } else if (path === '') {
         setCurrentPage('home');
+        setLanguage('tr');
         setIs404(false);
       } else {
         setIs404(true);
+        setLanguage(detectedLanguage);
       }
     };
 
