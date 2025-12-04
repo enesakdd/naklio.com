@@ -6,6 +6,21 @@ interface SEOHeadProps {
   language: Language;
 }
 
+// URL mappings for bilingual SEO
+const pageToTurkishPath: Record<string, string> = {
+  'home': '',
+  'solutions': 'cozumler',
+  'contact': 'iletisim',
+  'sss': 'sss',
+};
+
+const pageToEnglishPath: Record<string, string> = {
+  'home': '',
+  'solutions': 'solutions',
+  'contact': 'contact',
+  'sss': 'faq',
+};
+
 const seoData = {
   tr: {
     home: {
@@ -118,36 +133,46 @@ export function SEOHead({ page, language }: SEOHeadProps) {
       tag.setAttribute('content', content);
     });
     
-    // Canonical URL
+    // Generate URLs for both languages
+    const trPath = pageToTurkishPath[page] || '';
+    const enPath = pageToEnglishPath[page] || '';
+    const trUrl = trPath ? `https://naklio.com/${trPath}` : 'https://naklio.com/';
+    const enUrl = enPath ? `https://naklio.com/${enPath}` : 'https://naklio.com/';
+    const currentUrl = language === 'tr' ? trUrl : enUrl;
+    
+    // Canonical URL - points to current language version
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {
       canonical = document.createElement('link');
       canonical.setAttribute('rel', 'canonical');
       document.head.appendChild(canonical);
     }
-    const canonicalUrl = page === 'home' 
-      ? 'https://naklio.com/' 
-      : `https://naklio.com/${page}`;
-    canonical.setAttribute('href', canonicalUrl);
+    canonical.setAttribute('href', currentUrl);
     
-    // Alternate language links
-    let alternateTr = document.querySelector('link[hreflang="tr"]');
-    if (!alternateTr) {
-      alternateTr = document.createElement('link');
-      alternateTr.setAttribute('rel', 'alternate');
-      alternateTr.setAttribute('hreflang', 'tr');
-      document.head.appendChild(alternateTr);
-    }
-    alternateTr.setAttribute('href', canonicalUrl);
+    // Remove old hreflang links to prevent duplicates
+    const oldHreflangs = document.querySelectorAll('link[hreflang]');
+    oldHreflangs.forEach(link => link.remove());
     
-    let alternateEn = document.querySelector('link[hreflang="en"]');
-    if (!alternateEn) {
-      alternateEn = document.createElement('link');
-      alternateEn.setAttribute('rel', 'alternate');
-      alternateEn.setAttribute('hreflang', 'en');
-      document.head.appendChild(alternateEn);
-    }
-    alternateEn.setAttribute('href', canonicalUrl);
+    // Turkish version hreflang
+    const alternateTr = document.createElement('link');
+    alternateTr.setAttribute('rel', 'alternate');
+    alternateTr.setAttribute('hreflang', 'tr');
+    alternateTr.setAttribute('href', trUrl);
+    document.head.appendChild(alternateTr);
+    
+    // English version hreflang
+    const alternateEn = document.createElement('link');
+    alternateEn.setAttribute('rel', 'alternate');
+    alternateEn.setAttribute('hreflang', 'en');
+    alternateEn.setAttribute('href', enUrl);
+    document.head.appendChild(alternateEn);
+    
+    // x-default hreflang (defaults to Turkish)
+    const alternateDefault = document.createElement('link');
+    alternateDefault.setAttribute('rel', 'alternate');
+    alternateDefault.setAttribute('hreflang', 'x-default');
+    alternateDefault.setAttribute('href', trUrl);
+    document.head.appendChild(alternateDefault);
     
   }, [page, language]);
   

@@ -8,6 +8,7 @@ import { SSSPage } from './components/SSSPage';
 import { SEOHead } from './components/SEOHead';
 import { StructuredData } from './components/StructuredData';
 import { GoogleAnalytics } from './components/GoogleAnalytics';
+import { Favicons } from './components/Favicons';
 import { Language } from './translations';
 
 // URL path mappings for bilingual support
@@ -93,6 +94,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Favicons />
       <GoogleAnalytics />
       <SEOHead page={currentPage} language={language} />
       <StructuredData page={currentPage} language={language} />
