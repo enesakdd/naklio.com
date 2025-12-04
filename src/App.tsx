@@ -5,6 +5,7 @@ import { HomePage } from './components/HomePage';
 import { SolutionsPage } from './components/SolutionsPage';
 import { ContactPage } from './components/ContactPage';
 import { SSSPage } from './components/SSSPage';
+import { NotFoundPage } from './components/NotFoundPage';
 import { SEOHead } from './components/SEOHead';
 import { StructuredData } from './components/StructuredData';
 import { GoogleAnalytics } from './components/GoogleAnalytics';
@@ -39,16 +40,28 @@ const pageToEnglishPath: Record<string, string> = {
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [language, setLanguage] = useState<Language>('tr');
+  const [is404, setIs404] = useState(false);
 
   // Initialize from URL on mount
   useEffect(() => {
     const path = window.location.pathname.replace(/^\//, '').replace(/\/$/, '');
-    const page = pathToPage[path] || 'home';
-    setCurrentPage(page);
+    const page = pathToPage[path];
+    
+    if (page) {
+      setCurrentPage(page);
+      setIs404(false);
+    } else if (path === '') {
+      setCurrentPage('home');
+      setIs404(false);
+    } else {
+      setIs404(true);
+    }
   }, []);
 
   // Update URL when page changes
   useEffect(() => {
+    if (is404) return; // Don't update URL for 404 pages
+    
     const path = language === 'tr' 
       ? pageToTurkishPath[currentPage] 
       : pageToEnglishPath[currentPage];
@@ -58,14 +71,23 @@ export default function App() {
     if (window.location.pathname !== newPath) {
       window.history.pushState({}, '', newPath);
     }
-  }, [currentPage, language]);
+  }, [currentPage, language, is404]);
 
   // Handle browser back/forward buttons
   useEffect(() => {
     const handlePopState = () => {
       const path = window.location.pathname.replace(/^\//, '').replace(/\/$/, '');
-      const page = pathToPage[path] || 'home';
-      setCurrentPage(page);
+      const page = pathToPage[path];
+      
+      if (page) {
+        setCurrentPage(page);
+        setIs404(false);
+      } else if (path === '') {
+        setCurrentPage('home');
+        setIs404(false);
+      } else {
+        setIs404(true);
+      }
     };
 
     window.addEventListener('popstate', handlePopState);
@@ -75,9 +97,16 @@ export default function App() {
   // Scroll to top whenever the page changes
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [currentPage]);
+  }, [currentPage, is404]);
 
   const renderPage = () => {
+    if (is404) {
+      return <NotFoundPage onNavigate={(page) => {
+        setCurrentPage(page);
+        setIs404(false);
+      }} language={language} />;
+    }
+    
     switch (currentPage) {
       case 'home':
         return <HomePage onNavigate={setCurrentPage} language={language} />;
@@ -88,7 +117,10 @@ export default function App() {
       case 'sss':
         return <SSSPage language={language} />;
       default:
-        return <HomePage onNavigate={setCurrentPage} language={language} />;
+        return <NotFoundPage onNavigate={(page) => {
+          setCurrentPage(page);
+          setIs404(false);
+        }} language={language} />;
     }
   };
 
