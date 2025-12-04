@@ -894,6 +894,10 @@
     border-color: var(--color-red-200);
   }
 
+  .border-white {
+    border-color: var(--color-white);
+  }
+
   .bg-\[\#005F5F\] {
     background-color: #005f5f;
   }

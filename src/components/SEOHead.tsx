@@ -25,8 +25,8 @@ const seoData = {
   tr: {
     home: {
       title: 'Naklio - Akıllı Araç Taşımacılığı Lojistik Platformu',
-      description: 'Naklio ile araç taşımacılığınızı dijitalleştirin. Hızlı teklif alın, gerçek zamanlı takip edin, maliyetleri azaltın.',
-      keywords: 'araç taşıma, araç taşıt, araç lojistiği, oto taşıma, naklio, araç çekici, oto çekici, rota optimizasyonu'
+      description: 'Naklio ile araç taşımacılığınızı dijitalleştirin. Hızlı teklif alın, gerçek zamanlı takip edin, maliyetleri azaltın. Türkiye\'nin önde gelen akıllı lojistik çözümü.',
+      keywords: 'araç taşımacılığı, lojistik platform, araç lojistiği, oto taşımacılık, naklio, akıllı lojistik, araç takip sistemi, rota optimizasyonu'
     },
     solutions: {
       title: 'Lojistik Çözümlerimiz - Naklio',
@@ -36,18 +36,18 @@ const seoData = {
     contact: {
       title: 'İletişim - Naklio',
       description: 'Naklio ile iletişime geçin. Araç taşımacılığı ve lojistik çözümleri hakkında detaylı bilgi alın. Maltepe, İstanbul.',
-      keywords: 'naklio iletişim, oto taşıyıcı iletişim, araç taşıma iletişim'
+      keywords: 'naklio iletişim, lojistik danışmanlık, araç taşımacılığı iletişim'
     },
     sss: {
       title: 'Sıkça Sorulan Sorular - Naklio',
       description: 'Naklio platformu, araç taşımacılığı, fiyatlandırma ve teknik destek hakkında sıkça sorulan sorular ve cevapları.',
-      keywords: 'naklio, araç taşıma lojistiği, araç taşımacılığı sorular'
+      keywords: 'naklio sss, lojistik sss, araç taşımacılığı sorular, platform kullanımı'
     }
   },
   en: {
     home: {
       title: 'Naklio - Smart Vehicle Transport Logistics Platform',
-      description: 'Digitize your vehicle transportation with Naklio. Get quick quotes, track in real-time, reduce costs.',
+      description: 'Digitize your vehicle transportation with Naklio. Get quick quotes, track in real-time, reduce costs. Turkey\'s leading smart logistics solution.',
       keywords: 'vehicle transport, logistics platform, auto logistics, car shipping, naklio, smart logistics, vehicle tracking, route optimization'
     },
     solutions: {

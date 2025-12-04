@@ -12,7 +12,8 @@ import {
   Radar,
   MapPin,
   FileBarChart,
-  Headphones
+  Headphones,
+  Play
 } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
@@ -90,42 +91,48 @@ export function HomePage({ onNavigate, language }: HomePageProps) {
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6" style={{ fontFamily: 'Sora, sans-serif' }}>
-                {t.hero.title}
-              </h1>
-              <p className="text-lg md:text-xl text-gray-300 mb-8">
-                {t.hero.subtitle}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  size="lg"
-                  className="rounded-lg px-8 transition-all hover:!bg-white group"
-                  style={{ 
-                    backgroundColor: 'var(--naklio-orange)',
-                    color: 'white'
-                  }}
-                  onClick={() => onNavigate('contact')}
-                >
-                  <span className="group-hover:text-[var(--naklio-teal)] transition-colors">
-                    {t.nav.getQuote}
-                  </span>
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:text-[var(--naklio-teal)] transition-colors" />
-                </Button>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl" style={{ paddingBottom: '56.25%' }}>
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full"
-                  src="https://www.youtube.com/embed/99VArLf5c0s"
-                  title="Naklio Platform Video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6" style={{ fontFamily: 'Sora, sans-serif' }}>
+              {t.hero.title}
+            </h1>
+            <p className="text-lg md:text-xl text-gray-300 mb-8">
+              {t.hero.subtitle}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button 
+                size="lg"
+                className="rounded-lg px-8 transition-all hover:!bg-white group"
+                style={{ 
+                  backgroundColor: 'var(--naklio-orange)',
+                  color: 'white'
+                }}
+                onClick={() => onNavigate('contact')}
+              >
+                <span className="group-hover:text-[var(--naklio-teal)] transition-colors">
+                  {t.nav.getQuote}
+                </span>
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:text-[var(--naklio-teal)] transition-colors" />
+              </Button>
+              <Button 
+                size="lg"
+                className="rounded-lg px-8 border-2 border-white hover:bg-white transition-all"
+                style={{ 
+                  backgroundColor: 'var(--naklio-teal)',
+                  color: 'white'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'white';
+                  e.currentTarget.style.color = 'var(--naklio-teal)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'var(--naklio-teal)';
+                  e.currentTarget.style.color = 'white';
+                }}
+                onClick={() => window.open('https://www.youtube.com/watch?v=99VArLf5c0s', '_blank')}
+              >
+                <Play className="mr-2 w-5 h-5" />
+                {t.nav.watchVideo}
+              </Button>
             </div>
           </div>
         </div>

@@ -6,7 +6,8 @@ export const translations = {
       faq: 'SSS',
       contact: 'İletişim',
       login: 'Giriş Yap',
-      getQuote: 'Başvur'
+      getQuote: 'Başvur',
+      watchVideo: 'Videoyu İzle'
     },
     hero: {
       title: 'Akıllı Lojistik Çözümleriyle Araç Taşımacılığında Verimlilik',
@@ -141,7 +142,8 @@ export const translations = {
       faq: 'FAQ',
       contact: 'Contact',
       login: 'Login',
-      getQuote: 'Apply'
+      getQuote: 'Apply',
+      watchVideo: 'Watch Video'
     },
     hero: {
       title: 'Efficiency in Vehicle Transportation with Smart Logistics Solutions',
