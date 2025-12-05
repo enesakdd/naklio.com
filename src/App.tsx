@@ -48,12 +48,6 @@ export default function App() {
       .replace(/^\//, "")
       .replace(/\/$/, "");
     
-    // Let static files and PDF redirects pass through
-    if (path === "kvk-basvuru-formu" || path === "en/kvk-application-form") {
-      window.location.href = window.location.href; // Force full page load
-      return;
-    }
-    
     const page = pathToPage[path];
 
     // Detect language from URL
