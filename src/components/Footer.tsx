@@ -60,7 +60,7 @@ export function Footer({ onNavigate, language }: FooterProps) {
                 </button>
               </li>
               <li>
-                <a href="/kvk-basvuru-formu.pdf" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[var(--naklio-orange)] transition-colors">
+                <a href="/kvk-basvuru-formu" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[var(--naklio-orange)] transition-colors">
                   {t.footer.kvkkForm}
                 </a>
               </li>
