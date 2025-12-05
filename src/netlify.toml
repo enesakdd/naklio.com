@@ -13,6 +13,18 @@
   headers = {Content-Type = "text/plain"}
 
 [[redirects]]
+  from = "/kvk-basvuru-formu"
+  to = "/kvk-basvuru-formu.pdf"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/en/kvk-application-form"
+  to = "/kvk-basvuru-formu.pdf"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
