@@ -13,7 +13,7 @@ export function Footer({ onNavigate, language }: FooterProps) {
   return (
     <footer className="bg-[var(--naklio-teal)] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
             <div className="mb-4">
@@ -37,6 +37,7 @@ export function Footer({ onNavigate, language }: FooterProps) {
 
           {/* Quick Links */}
           <div>
+            <h4 className="mb-4">{t.footer.quickLinks}</h4>
             <ul className="space-y-2">
               <li>
                 <button onClick={() => onNavigate('home')} className="text-gray-300 hover:text-[var(--naklio-orange)] transition-colors">
@@ -57,6 +58,11 @@ export function Footer({ onNavigate, language }: FooterProps) {
                 <button onClick={() => onNavigate('contact')} className="text-gray-300 hover:text-[var(--naklio-orange)] transition-colors">
                   {t.nav.contact}
                 </button>
+              </li>
+              <li>
+                <a href="/kvk-basvuru-formu.pdf" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[var(--naklio-orange)] transition-colors">
+                  {t.footer.kvkkForm}
+                </a>
               </li>
             </ul>
           </div>
