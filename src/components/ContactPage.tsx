@@ -260,7 +260,7 @@ export function ContactPage({ onNavigate, language }: ContactPageProps) {
                     <>
                       Form gönderimi ile ilgili detaylı bilgi için{' '}
                       <a 
-                        href="/kvk-aydinlatma-metni.pdf" 
+                        href="/public/kvk-aydinlatma-metni.pdf" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="underline hover:no-underline"
@@ -274,7 +274,7 @@ export function ContactPage({ onNavigate, language }: ContactPageProps) {
                     <>
                       For detailed information about form submission, please review our{' '}
                       <a 
-                        href="/kvk-aydinlatma-metni.pdf" 
+                        href="/public/kvk-aydinlatma-metni.pdf" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="underline hover:no-underline"
