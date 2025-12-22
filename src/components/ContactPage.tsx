@@ -29,7 +29,7 @@ export function ContactPage({ onNavigate, language }: ContactPageProps) {
       icon: Mail,
       title: language === 'tr' ? 'E-posta' : 'Email',
       content: 'info@naklio.com',
-      subContent: 'destek@naklio.com'
+      subContent: 'info@naklio.com'
     },
     {
       icon: MapPin,
@@ -254,7 +254,38 @@ export function ContactPage({ onNavigate, language }: ContactPageProps) {
                     : t.send
                   }
                 </Button>
-
+                   {/* Clarification Text */}
+                <div className="text-sm text-gray-600 text-center">
+                  {language === 'tr' ? (
+                    <>
+                      Form gönderimi ile ilgili detaylı bilgi için{' '}
+                      <a 
+                        href="/kvk-aydinlatma-metni.pdf" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="underline hover:no-underline"
+                        style={{ color: 'var(--naklio-teal)' }}
+                      >
+                        Aydınlatma Metni'ni
+                      </a>
+                      {' '}inceleyebilirsiniz.
+                    </>
+                  ) : (
+                    <>
+                      For detailed information about form submission, please review our{' '}
+                      <a 
+                        href="/kvk-aydinlatma-metni.pdf" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="underline hover:no-underline"
+                        style={{ color: 'var(--naklio-teal)' }}
+                      >
+                        Privacy Notice
+                      </a>
+                      .
+                    </>
+                  )}
+                </div>
                 {/* Success Message */}
                 {submitStatus === 'success' && (
                   <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
