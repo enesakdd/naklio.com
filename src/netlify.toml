@@ -25,6 +25,18 @@
   force = true
 
 [[redirects]]
+  from = "/kvk-aydinlatma-metni"
+  to = "/kvk-aydinlatma-metni.pdf"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/en/kvk-clarification-form"
+  to = "/kvk-aydinlatma-metni.pdf"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
