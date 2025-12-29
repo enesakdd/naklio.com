@@ -258,7 +258,7 @@ export function ContactPage({ onNavigate, language }: ContactPageProps) {
                 <div className="text-sm text-gray-600 text-center">
                   {language === 'tr' ? (
                     <>
-                      Form gönderimi ile ilgili detaylı bilgi için{' '}
+                     6698 sayılı Kişisel Verilerin Korunması Kanunu uyarınca Gembox’ın ilgili aydınlatma metnine{' '}
                       <a 
                         href="/kvk-aydinlatma-metni.pdf" 
                         target="_blank" 
@@ -266,13 +266,13 @@ export function ContactPage({ onNavigate, language }: ContactPageProps) {
                         className="underline hover:no-underline"
                         style={{ color: 'var(--naklio-teal)' }}
                       >
-                        Aydınlatma Metni'ni
+                        buradan
                       </a>
-                      {' '}inceleyebilirsiniz.
+                      {' '}ulaşabilirsiniz.
                     </>
                   ) : (
                     <>
-                      For detailed information about form submission, please review our{' '}
+                      In accordance with the Personal Data Protection Law No. 6698, you can access Gembox’s relevant privacy notice{' '}
                       <a 
                         href="/kvk-aydinlatma-metni.pdf" 
                         target="_blank" 
@@ -280,7 +280,7 @@ export function ContactPage({ onNavigate, language }: ContactPageProps) {
                         className="underline hover:no-underline"
                         style={{ color: 'var(--naklio-teal)' }}
                       >
-                        Privacy Notice
+                        here
                       </a>
                       .
                     </>
