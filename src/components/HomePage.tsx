@@ -18,7 +18,7 @@ import {
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import heroBackground from 'figma:asset/4f9d3d80c7cf9ab4712a494b1a7ae555267646d4.png';
+import heroBackground from 'assets/bg.png';
 import { Language, translations } from '../translations';
 
 interface HomePageProps {
