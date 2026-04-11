@@ -84,7 +84,7 @@ export function Footer({ onNavigate, language }: FooterProps) {
         </div>
 
         <div className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 Naklio. {t.footer.rights}</p>
+          <p>&copy; 2026 Naklio. {t.footer.rights}</p>
         </div>
       </div>
     </footer>
